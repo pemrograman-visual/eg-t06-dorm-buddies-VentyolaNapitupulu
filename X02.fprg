@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="X02"/>
+        <attribute name="authors" value="Rony Pangaribuan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-04 05:22:18 PM"/>
+        <attribute name="created" value="RnJhbmsgTmlyb3k7RlJBTks7MjAyMy0xMS0xNjsxMC4xOS4xMyBBTTsyNjY1"/>
+        <attribute name="edited" value="RnJhbmsgTmlyb3k7RlJBTks7MjAyMy0xMi0xNTswMS41Ni4xNiBQTTsxMTsyODQx"/>
+        <attribute name="edited" value="QVNVUztST05ZOzIwMjQtMTItMDQ7MDM6NDA6NDIgUE07MjsyMDI1"/>
+        <attribute name="edited" value="QVNVUztMQVBUT1AtQ0I4SzRBVDk7MjAyNC0xMi0wNDswNToyMjoxOCBQTTsxOzI3MzI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="True" size="4"/>
+            <call expression="fungsi1(name)"/>
+            <call expression="fungsi2(name)"/>
+        </body>
+    </function>
+    <function name="fungsi1" type="None" variable="">
+        <parameters>
+            <parameter name="name" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="d" type="Integer" array="False" size=""/>
+            <for variable="d" start="0" end="3" direction="inc" step="1">
+                <assign variable="name[d]" expression="&quot;&quot;"/>
+            </for>
+        </body>
+    </function>
+    <function name="fungsi2" type="None" variable="">
+        <parameters>
+            <parameter name="name" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="x, a" type="Integer" array="False" size=""/>
+            <for variable="x" start="0" end="3" direction="inc" step="1">
+                <input variable="name[x]"/>
+                <if expression="name[x] = &quot;---&quot;">
+                    <then>
+                        <assign variable="name[x]" expression="&quot;&quot;"/>
+                        <assign variable="a" expression="x"/>
+                        <assign variable="x" expression="4"/>
+                    </then>
+                    <else>
+                        <assign variable="a" expression="x"/>
+                    </else>
+                </if>
+            </for>
+            <call expression="fungsi3(name)"/>
+        </body>
+    </function>
+    <function name="fungsi3" type="None" variable="">
+        <parameters>
+            <parameter name="name" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <for variable="c" start="0" end="3" direction="inc" step="1">
+                <output expression="name[c]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
