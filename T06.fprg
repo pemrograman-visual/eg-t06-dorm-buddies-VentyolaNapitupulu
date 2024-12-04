@@ -1,30 +1,32 @@
 <?xml version="1.0"?>
 <flowgorithm fileversion="4.2">
     <attributes>
-        <attribute name="name" value="Ventyola Napitupulu"/>
+        <attribute name="name" value="Ventyola"/>
         <attribute name="authors" value="ASUS"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2024-12-04 04:34:28 PM"/>
-        <attribute name="created" value="QVNVUztMQVBUT1AtQ0I4SzRBVDk7MjAyNC0xMi0wNDswMzo0NDowMSBQTTsyNjE4"/>
-        <attribute name="edited" value="QVNVUztMQVBUT1AtQ0I4SzRBVDk7MjAyNC0xMi0wNDswNDozNDoyOCBQTTs0OzI3Mzg="/>
+        <attribute name="saved" value="2024-12-04 05:00:48 PM"/>
+        <attribute name="created" value="QVNVUztMQVBUT1AtQ0I4SzRBVDk7MjAyNC0xMi0wNDswNDo0ODoxMiBQTTsyNjI1"/>
+        <attribute name="edited" value="QVNVUztMQVBUT1AtQ0I4SzRBVDk7MjAyNC0xMi0wNDswNDo1NTozMCBQTTsxO0xlbm92bztERVNLVE9QLTRMUk0wTks7MjAyMy0xMS0xNjsxMDoxNzo0NiBBTTtYMDJbMV0uZnByZzs2NzA3"/>
+        <attribute name="edited" value="QVNVUztMQVBUT1AtQ0I4SzRBVDk7MjAyNC0xMi0wNDswNTowMDo0OCBQTTsyOzI3MzI="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="namE" type="String" array="True" size="4"/>
+            <declare name="name" type="String" array="True" size="4"/>
             <declare name="i" type="Integer" array="False" size=""/>
             <assign variable="i" expression="0"/>
-            <call expression="default(i,name)"/>
-            <call expression="inputbuddies(i,name)"/>
-            <call expression="outputbuddies(i,name)"/>
+            <call expression="default(name,i)"/>
+            <call expression="inputbuddies(name)"/>
+            <call expression="outputbuddies(name)"/>
         </body>
     </function>
     <function name="default" type="None" variable="">
         <parameters>
-            <parameter name="i" type="Integer" array="False"/>
             <parameter name="name" type="String" array="True"/>
+            <parameter name="i" type="Integer" array="False"/>
         </parameters>
         <body>
+            <declare name="default" type="String" array="False" size=""/>
             <for variable="i" start="0" end="3" direction="inc" step="1">
                 <assign variable="name[i]" expression="&quot;&quot;"/>
             </for>
@@ -32,16 +34,16 @@
     </function>
     <function name="inputbuddies" type="None" variable="">
         <parameters>
-            <parameter name="i" type="Integer" array="False"/>
             <parameter name="name" type="String" array="True"/>
         </parameters>
         <body>
+            <declare name="inputbuddies" type="String" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
             <for variable="i" start="0" end="3" direction="inc" step="1">
                 <input variable="name[i]"/>
                 <if expression="name[i]=&quot;---&quot;">
                     <then>
-                        <assign variable="name[i]" expression="&quot;&quot;"/>
-                        <assign variable="i" expression="3"/>
+                        <assign variable="i" expression="9"/>
                     </then>
                     <else/>
                 </if>
@@ -50,12 +52,18 @@
     </function>
     <function name="outputbuddies" type="None" variable="">
         <parameters>
-            <parameter name="i" type="Integer" array="False"/>
             <parameter name="name" type="String" array="True"/>
         </parameters>
         <body>
+            <declare name="outputbuddies" type="String" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
             <for variable="i" start="0" end="3" direction="inc" step="1">
-                <output expression="name[i]" newline="True"/>
+                <if expression="Name[i] = &quot;---&quot;">
+                    <then/>
+                    <else>
+                        <output expression="Name[i]" newline="True"/>
+                    </else>
+                </if>
             </for>
         </body>
     </function>

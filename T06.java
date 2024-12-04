@@ -43,7 +43,6 @@ public class T06 {
 
         for (i = 0; i <= 3; i++) {
             if (name[i].equals("---")) {
-                i = 72;
             } else {
                 System.out.println(name[i]);
             }
