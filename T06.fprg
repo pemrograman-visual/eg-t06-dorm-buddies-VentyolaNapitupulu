@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Ventyola Napitupulu"/>
+        <attribute name="authors" value="ASUS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-04 04:19:47 PM"/>
+        <attribute name="created" value="QVNVUztMQVBUT1AtQ0I4SzRBVDk7MjAyNC0xMi0wNDswMzo0NDowMSBQTTsyNjE4"/>
+        <attribute name="edited" value="QVNVUztMQVBUT1AtQ0I4SzRBVDk7MjAyNC0xMi0wNDswNDoxOTo0NyBQTTszOzI3NDE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="namE" type="String" array="True" size="4"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <call expression="default(i,name)"/>
+            <call expression="inputbuddies(i,name)"/>
+            <call expression="outputbuddies(i,name)"/>
+        </body>
+    </function>
+    <function name="default" type="None" variable="">
+        <parameters>
+            <parameter name="i" type="Integer" array="False"/>
+            <parameter name="name" type="String" array="True"/>
+        </parameters>
+        <body>
+            <for variable="i" start="0" end="3" direction="inc" step="1">
+                <assign variable="name[i]" expression="&quot;&quot;"/>
+            </for>
+        </body>
+    </function>
+    <function name="inputbuddies" type="None" variable="">
+        <parameters>
+            <parameter name="i" type="Integer" array="False"/>
+            <parameter name="name" type="String" array="True"/>
+        </parameters>
+        <body>
+            <for variable="i" start="0" end="3" direction="inc" step="1">
+                <input variable="name[i]"/>
+                <if expression="name[i]=&quot;---&quot;">
+                    <then>
+                        <assign variable="name[i]" expression="&quot;&quot;"/>
+                        <assign variable="i" expression="3"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+    <function name="outputbuddies" type="None" variable="">
+        <parameters>
+            <parameter name="i" type="Integer" array="False"/>
+            <parameter name="name" type="String" array="True"/>
+        </parameters>
+        <body>
+            <for variable="i" start="0" end="3" direction="inc" step="1">
+                <output expression="name[i]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
