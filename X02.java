@@ -7,43 +7,41 @@ public class X02 {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String[] nama = new String[4];
+        String[] name = new String[4];
 
-        func_default(nama);
-        inputbuddies(nama);
+        fungsi1(name);
+        fungsi2(name);
     }
     
-    public static void func_default(String[] nama) {
-        int i;
+    public static void fungsi1(String[] name) {
+        int d;
 
-        for (i = 0; i <= 3; i++) {
-            nama[i] = "";
+        for (d = 0; d <= 3; d++) {
+            name[d] = "";
         }
     }
     
-    public static void inputbuddies(String[] nama) {
-        int x, z;
+    public static void fungsi2(String[] name) {
+        int x, a;
 
         for (x = 0; x <= 3; x++) {
-            nama[x] = input.nextLine();
-            if (nama[x].equals("---")) {
-                nama[x] = "";
-                z = x;
+            name[x] = input.nextLine();
+            if (name[x].equals("---")) {
+                name[x] = "";
+                a = x;
                 x = 4;
             } else {
-                z = x;
+                a = x;
             }
         }
-        outputbuddies(nama);
+        fungsi3(name);
     }
     
-    public static void outputbuddies(String[] nama) {
+    public static void fungsi3(String[] name) {
         int c;
 
         for (c = 0; c <= 3; c++) {
-            System.out.println(nama[c]);
+            System.out.println(name[c]);
         }
     }
 }
-
-
