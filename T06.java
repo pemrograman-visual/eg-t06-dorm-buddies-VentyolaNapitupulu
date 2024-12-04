@@ -1,5 +1,6 @@
-// 12S24039 - Jody Alfonso Siahaan
-// 12S24042- Ventyola Rohati Napitupulu
+12S24039 - Jody Alfonso Siahaan
+12S24042 - Ventyola Rohati Napitupulu
+
 import java.util.*;
 import java.lang.Math;
 
