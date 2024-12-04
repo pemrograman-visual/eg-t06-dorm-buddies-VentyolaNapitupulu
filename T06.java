@@ -8,34 +8,45 @@ public class T06 {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String[] namE = new String[4];
+        String[] name = new String[4];
         int i;
 
         i = 0;
-        func_default(i, namE);
-        inputbuddies(i, namE);
-        outputbuddies(i, namE);
+        var_default(name, i);
+        inputbuddies(name);
+        outputbuddies(name);
     }
     
-    public static void func_default(int i, String[] name) {
+    public static void var_default(String[] name, int i) {
+        String var_default;
+
         for (i = 0; i <= 3; i++) {
             name[i] = "";
         }
     }
     
-    public static void inputbuddies(int i, String[] name) {
+    public static void inputbuddies(String[] name) {
+        String inputbuddies;
+        int i;
+
         for (i = 0; i <= 3; i++) {
             name[i] = input.nextLine();
             if (name[i].equals("---")) {
-                name[i] = "";
-                i = 3;
+                i = 9;
             }
         }
     }
     
-    public static void outputbuddies(int i, String[] name) {
+    public static void outputbuddies(String[] name) {
+        String outputbuddies;
+        int i;
+
         for (i = 0; i <= 3; i++) {
-            System.out.println(name[i]);
+            if (name[i].equals("---")) {
+                i = 72;
+            } else {
+                System.out.println(name[i]);
+            }
         }
     }
 }
